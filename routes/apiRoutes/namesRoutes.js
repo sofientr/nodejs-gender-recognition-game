@@ -4,18 +4,14 @@ const request = require('request');
 const dotenv = require('dotenv');
 dotenv.config();
 
-
-
-
-
 router.get('/gender', (req, res) => {
     var name = req.query.name;
     var key = process.env.API_KEY;
-    console.log('https://gender-api.com/get?key=' + key + '&name=' + name)
+
     request('https://gender-api.com/get?key=' + key + '&name=' + name, function (err, response, body) {
         if (!err && response.statusCode == 200) {
             var parsedBody = JSON.parse(body);
-            res.send(parsedBody)
+            res.json({gender:parsedBody.gender})
 
         } else {
             console.log("error when fetching data from api")

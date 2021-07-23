@@ -7,7 +7,7 @@ const formContainer = document.querySelector("#user-input-form")
 const timerEl = document.querySelector("#socre");
 let scoreObject = {};
 let result;
-let playerScore=19
+let playerScore=10
 // Questions Array
 let questions = [];
 
@@ -85,6 +85,12 @@ const mainTest = function (result) {
         optionTwo.id = "quizButton";
         optionTwo.textContent = "female";
         mainContent.appendChild(optionTwo);
+
+       /* let optionThree = document.createElement("button");
+        optionThree.className = "quiz-button btn";
+        optionThree.id = "quizButton";
+        optionThree.textContent = "unisex";
+        mainContent.appendChild(optionThree);*/
         
         
         
@@ -127,11 +133,6 @@ const  checkResult = async function (userAnswer) {
     counter++
     mainTest(result);
 }
-
-
-
-
-
 
 // End test function
 const endTest = function (win) {
