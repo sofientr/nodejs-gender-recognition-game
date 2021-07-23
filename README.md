@@ -53,3 +53,4 @@ the project took me 4 hours to complete it
 
 to add unisex option i should change the api
   
+we must also clean the database by removing special characters such as accents
