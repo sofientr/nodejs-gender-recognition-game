@@ -17,7 +17,14 @@ git clone https://github.com/sofientr/nodejs-gender-recognition-game.git
 
 
 # Get into the directory
-cd mysql-node-express
+cd nodejs-gender-recognition-game
+
+
+# Coppy .env-example and create your own .env file
+cp .env-example .env
+
+# Edit .env file and add your mysql username, mysql password , db name and apikey https://gender-api.com/ 
+vi .env
 
 # Get into the db directory
 cd db
@@ -40,6 +47,6 @@ npm start
     
 ## Demo
 ![](capture.gif)
-Insert gif or link to demo
+
 
   
