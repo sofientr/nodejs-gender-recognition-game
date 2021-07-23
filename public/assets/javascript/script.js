@@ -22,6 +22,9 @@ formContainer.id = ""
 
 // fetch names when window load
 window.onload=async()=>{
+
+
+
     let response = await  fetch('api/names');
     let result = await response.json();
     questions=result
@@ -172,7 +175,7 @@ const endTest = function (win) {
 
     
     initialsSubmit.addEventListener("click", function (event) {
-
+        alert("you can add a treatment here")
 
     })
 }
