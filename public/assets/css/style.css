@@ -1,0 +1,161 @@
+* {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+  }
+
+body {
+    background-color: #301810;
+    color: rgba(255, 255, 255, .7);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.main-content {
+    width: 45%;
+    margin-top: 200px;
+    text-align: center;
+    background-color: #5b3f36;
+    padding: 20px;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+#countdown {
+    margin-right: 30px;
+}
+
+
+/* Welcome Styles */
+.welcome-heading {
+    font-size: 50px;
+}
+.welcome-rules {
+    font-size: 20px;
+}
+.start-btn {
+    padding: 15px 30px;
+    border: none;
+    position: relative;
+    background-color: #38006b;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    border-radius: 4px;
+}
+.start-btn:hover {
+    top: 2px;
+    left: 1px;
+    background-color: rgba(135, 36, 235, 0.8);
+}
+.start-btn:active {
+    top: 3px;
+}
+
+/* Questions Styles */
+.quiz-button {
+    width: 500px;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #38006b;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    
+}
+.quiz-button:hover {
+    background-color: rgba(135, 36, 235, 0.8);
+}
+
+/* Form styles */
+section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+#user-input-form {
+    position: relative;
+    bottom: 40px;
+    width: 48%;
+    border-radius: 4px;
+    background-color: #5b3f36;
+    text-align: center;
+    padding: 30px 20px;
+}
+.initials-input {
+    padding: 4px;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: none;
+    margin-right: 20px;
+}
+.initials-input:hover {
+    border: 2px solid rgba(135, 36, 235, 0.8);
+}
+
+.initials-submit {
+    padding: 4px;
+    color: white;
+    background-color: #38006b;
+    border-radius: 4px;
+    border: none;
+}
+.initials-submit:hover {
+    background-color: rgba(135, 36, 235, 0.8);
+}
+
+@media screen and (max-width: 769px) {
+    .quiz-button {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .quiz-button {
+        width: 200px;
+    }
+    .main-content {
+        width: 60%;
+        margin-top: 100px;
+    }
+    #user-input-form {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .quiz-button {
+        width: 100px;
+        margin-right: 5px;
+        font-size: 9px;
+    }
+    .main-content {
+        width: 70%;
+        margin-top: 100px;
+    }
+    .welcome-heading {
+        font-size: 25px;
+    }
+    .welcome-rules {
+        font-size: 15px;
+    }
+    #user-input-form {
+        width: 70%;
+    }
+
+}

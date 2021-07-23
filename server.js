@@ -1,13 +1,19 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 
 const app = express();
 const apiRoutes = require('./routes/apiRoutes')
 
 app.use(express.static('public'));
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.json());
+
+app.use('/', htmlRoutes);
 
 app.use('/api', apiRoutes);
 
