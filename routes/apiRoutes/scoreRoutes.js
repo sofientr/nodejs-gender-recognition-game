@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const fs = require('fs');
+const query = require('../../db/db-connection');
+
 
 const { readLines } = require('../../lib/textToDb');
 
@@ -18,20 +20,51 @@ router.get('/gender', (req, res)=>{
             res.send(parsedBody)
 
         } else {
-            console.log("error when scrapping")
+            console.log("error when fetching data from api")
         }
       });
 })
+router.get("/names",async function(req, res, next) {
+    try {
+    let sql = `SELECT * FROM names`;
+      res.json(await query(sql));
+    } catch (err) {
+      console.error(`Error while getting names `, err.message);
+      next(err);
+    }
+  })
 
-router.post('/textToDb', (req, res) => {
+
+router.post('/textToDb',  async function(req, res, next) {
+    try {
+            //for every line of text file do ..
+    readLines(async (line)=>{
+        let myarray = line.split(" ");
+        const sql = `INSERT INTO names
+    ( first_name, last_name) VALUES (?,?)`;
+
+    const result = await query(sql, [myarray[0], myarray[1]]);
+    const affectedRows = result ? result.affectedRows : 0;
+    return affectedRows;
+
+    })
+
+   /* 
+
+    
+        let sql = `SELECT * FROM names`;
+      res.json(await query(sql));*/
+    } catch (err) {
+      console.error(`Error while getting inserting names to database `, err.message);
+      next(err);
+    }
+  });
     //for every line of text file do ..
-    readLines((line)=>{
+    /*readLines((line)=>{
         console.log(line)
 
 
-    })
-});
-
+    })*/
 
 
 
