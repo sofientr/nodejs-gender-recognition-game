@@ -48,5 +48,8 @@ npm start
 ## Demo
 ![](capture.gif)
 
+## Appendix
+the project took me 4 hours to complete it
 
+to add unisex option i should change the api
   
